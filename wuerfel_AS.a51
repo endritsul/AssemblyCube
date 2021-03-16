@@ -2,11 +2,11 @@
 ; P R O G R A M M	wuerfel 
 ;********************************************************************************
 ; Source-File:		wuerfel_AS.a51
-; Autor:			Yves Bolis
-; Datum:			07.05.2019
+; Autor:			Endrit S.
+; Datum:			16.03.2021
 ; Version:			1.0
-; Beschreibung:		Programm soll Würfelzahlen zwischen 1 und 6 erzeugen und als 
-;                   Würfelaugen an Port 2 anzeigen
+; Beschreibung:		Programm soll WÃ¼rfelzahlen zwischen 1 und 6 erzeugen und als 
+;                   WÃ¼rfelaugen an Port 2 anzeigen
 ; Eingaben:			1 Schalter P3.0 = 0 STOP / P3.0 = 1 WUERFELN
 ; Ausgaben:			6 LEDs (P2, P2.0 - 2.5)
 ;********************************************************************************
@@ -25,14 +25,14 @@ INIT:
 	MOV		WDTCN,#0DEh
 	MOV		WDTCN,#0ADh		;disable Watchdog
 	
-	MOV		P2MDOUT,#0FFh	;P2 8 Ausgänge push/pull
+	MOV		P2MDOUT,#0FFh	;P2 8 AusgÃ¤nge push/pull
 	MOV		XBR2,#040h		;enable crossbar (Koppelfeld)
 
 	JMP 	RESET
 
 RESET:
 	MOV		A, #00h			; Akku auf null
-	MOV		P2, #00h		; P2 löschen
+	MOV		P2, #00h		; P2 lÃ¶schen
 	JMP 	WUERFELN
 
 WUERFELN:
